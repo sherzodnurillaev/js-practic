@@ -309,7 +309,8 @@ a {
     width: 180px;
     align-items: center;
     font-size: 24px;
-    color: rgba(0, 0, 0, .5)
+    color: rgba(0, 0, 0, .5);
+    /* position: relative;    */
 }
 
 .offer__slider-wrapper {
@@ -329,9 +330,10 @@ a {
 }
 
 .offer__slider #current {
-    font-size: 48px;
-    font-weight: 700;
-    color: #000
+    /* font-size: 48px; */
+    /* font-weight: 700; */
+    color: #000;
+    /* position: absolute; */
 }
 
 .offer__slide {
@@ -748,3 +750,12 @@ dialog {
         opacity: 1;
     }
 }
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+  img {
+    width: 100%;
+  }

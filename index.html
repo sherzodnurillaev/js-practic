@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -71,7 +76,7 @@
         <div class="tabheader">
           <h3>Выберите стиль питания</h3>
           <div class="tabheader__items">
-            <div class="tabheader__item">Фитнес</div>
+            <div class="tabheader__item tabheader__item_active">Фитнес</div>
             <div class="tabheader__item">Премиум</div>
             <div class="tabheader__item">Постное</div>
             <div class="tabheader__item">Сбалансированное</div>
@@ -118,17 +123,20 @@
           <div class="offer__slider-prev">
             <img src="icons/left.svg" alt="prev">
           </div>
-          <span id="current">03</span>
-          /
-          <span id="total">04</span>
-          <div class="offer__slider-next">
-            <img src="icons/right.svg" alt="next">
-          </div>
+          <!-- <div class="swiper-pagination"></div> -->
+          <span id="current"><div class="swiper-pagination"></div></span>
+          <!-- 
+          <span id="total">04</span> -->
+           <div class="offer__slider-next">
+            <img src="icons/right.svg" alt="right">
+          </div> 
+            <!-- Slider main container -->
         </div>
+        <!--
         <div class="offer__slider-wrapper">
           <div class="offer__slide">
             <img src="img/slider/pepper.jpg" alt="pepper">
-          </div>
+          </div> -->
           <!-- <div class="offer__slide">
                         <img src="img/slider/food-12.jpg" alt="food">
                     </div>
@@ -138,9 +146,57 @@
                     <div class="offer__slide">
                         <img src="img/slider/paprika.jpg" alt="paprika">
                     </div> -->
+                    <div class="swiper">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="img/slider/food-12.jpg" alt="food"></div>
+                        <div class="swiper-slide"><img src="img/slider/olive-oil.jpg" alt="oil"></div>
+                        <div class="swiper-slide"><img src="img/slider/paprika.jpg" alt="paprika"></div>
+                        <div class="swiper-slide"><img src="img/slider/pepper.jpg" alt="pepper"></div>
+                        ...
+                      </div>
+                      <!-- If we need pagination -->
+                      <!-- <div class="swiper-pagination"></div> -->
+                    
+                      <!-- If we need navigation buttons -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    
+                      <!-- If we need scrollbar -->
+                      <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+
+                    <script>
+                      const swiper = new Swiper('.swiper', {
+                      // Optional parameters
+                      direction: 'horizontal',
+                      loop: false,
+                    
+                      // If we need pagination
+                      pagination: {
+                        el: '.swiper-pagination',
+                        type: "fraction"
+                      },
+                    
+                      // Navigation arrows
+                      navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      },
+                    
+                      // And if we need scrollbar
+                      // scrollbar: {
+                      //   // el: '.swiper-scrollbar',
+                      // },
+                    });
+                    </script>
         </div>
+        
       </div>
+      
     </div>
+    
   </div>
 
   <div class="divider"></div>
@@ -244,7 +300,6 @@
       <form action="#" class="order__form">
         <input required placeholder="Ваше имя" name="name" type="text" class="order__input">
         <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="order__input">
-        <img src="icons/right.svg" alt="right">
         <button class="btn btn_dark btn_min">Перезвонить мне</button>
       </form>
     </div>
@@ -319,6 +374,7 @@
       </div>
     </div>
   </dialog>
+
   <script src="js/script.js"></script>
 </body>
 

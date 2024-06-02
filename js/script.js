@@ -52,6 +52,3 @@ function cont(idx = 0) {
 }
 
 cont(0)
-
-let cor = new Date()
-console.log(cor);
